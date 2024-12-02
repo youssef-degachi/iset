@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from 'react'
 import { Button } from '../components/ui/button.tsx'
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card.tsx"
@@ -10,6 +9,7 @@ import {ViewAbsences} from '../components/ViewAbsences.tsx'
 import LanguageSelector from '../components/LanguageSelector.tsx'
 import { translations } from '../data/translations.ts'
 import React from 'react'
+import EntityManager from '../components/EntityManger.tsx'
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -23,6 +23,7 @@ export default function Home() {
       case 'viewSchedule': return <ViewSchedule  />
       case 'markAbsence': return <MarkAbsence  />
       case 'viewAbsences': return <ViewAbsences />
+      case 'entityManger': return <EntityManager />
       default: return (
         <div>
           <h2 className="text-2xl font-bold mb-4">Welcome to School Management System</h2>
@@ -42,6 +43,7 @@ export default function Home() {
             <Button variant="ghost" onClick={() => setCurrentPage('viewSchedule')}>{t.viewSchedule}</Button>
             <Button variant="ghost" onClick={() => setCurrentPage('markAbsence')}>{t.markAbsence}</Button>
             <Button variant="ghost" onClick={() => setCurrentPage('viewAbsences')}>{t.viewAbsences}</Button>
+            <Button variant="ghost" onClick={() => setCurrentPage('entityManger')}>{t.EntityManager}</Button>
           </div>
           <LanguageSelector language={language} setLanguage={setLanguage} t={t} />
         </nav>

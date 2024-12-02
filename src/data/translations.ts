@@ -1,3 +1,5 @@
+import EntityManager from "../components/EntityManger";
+
 export const translations = {
   en: {
     home: "Home",
@@ -5,6 +7,7 @@ export const translations = {
     viewSchedule: "View Schedule",
     markAbsence: "Report Absence",
     viewAbsences: "View Absences",
+    EntityManager: "Entity Manager",
     language: "Language",
     subject: "Subject",
     day: "Day",
@@ -33,6 +36,7 @@ export const translations = {
     viewSchedule: "Voir l'emploi du temps",
     markAbsence: "Signaler une absence",
     viewAbsences: "Voir les absences",
+    EntityManager: "Entity de manager",
     language: "Langue",
     subject: "Matière",
     day: "Jour",
