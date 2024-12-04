@@ -71,7 +71,7 @@ const deleteMatiere = asyncHandler(async (req, res) => {
   const matiere = await Matiere.findById(req.params.id);
 
   if (matiere) {
-    await matiere.remove();
+    await matiere.deleteOne();
     res.json({ message: 'Matiere removed' });
   } else {
     res.status(404);

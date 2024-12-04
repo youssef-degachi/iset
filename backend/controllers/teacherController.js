@@ -39,7 +39,7 @@ const createTeacher = asyncHandler(async (req, res) => {
 // @route   PUT /api/teachers/:id
 // @access  Private/Admin
 const updateTeacher = asyncHandler(async (req, res) => {
-  const { name, lastname, cin, email, title, isAdmin } = req.body;
+  const { name, lastname, cin, email, title,password, isAdmin } = req.body;
 
   const teacher = await Teacher.findById(req.params.id);
 
@@ -50,6 +50,7 @@ const updateTeacher = asyncHandler(async (req, res) => {
     teacher.email = email || teacher.email;
     teacher.title = title || teacher.title;
     teacher.isAdmin = isAdmin || teacher.isAdmin;
+    teacher.password = password || teacher.password;
 
     const updatedTeacher = await teacher.save();
     res.json(updatedTeacher);
@@ -64,9 +65,9 @@ const updateTeacher = asyncHandler(async (req, res) => {
 // @access  Private/Admin
 const deleteTeacher = asyncHandler(async (req, res) => {
   const teacher = await Teacher.findById(req.params.id);
-
+  console.log("teacher remove ")
   if (teacher) {
-    await teacher.remove();
+    await teacher.deleteOne();
     res.json({ message: 'Teacher removed' });
   } else {
     res.status(404);

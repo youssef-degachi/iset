@@ -63,7 +63,7 @@ const deleteLesson = asyncHandler(async (req, res) => {
   const lesson = await Lesson.findById(req.params.id);
 
   if (lesson) {
-    await lesson.remove();
+    await lesson.deleteOne();
     res.json({ message: 'Lesson removed' });
   } else {
     res.status(404);

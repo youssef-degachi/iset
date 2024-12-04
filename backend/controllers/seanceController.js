@@ -64,7 +64,7 @@ const deleteSeance = asyncHandler(async (req, res) => {
   const seance = await Seance.findById(req.params.id);
 
   if (seance) {
-    await seance.remove();
+    await seance.deleteOne();
     res.json({ message: 'Seance removed' });
   } else {
     res.status(404);

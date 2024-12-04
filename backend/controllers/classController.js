@@ -61,7 +61,7 @@ const deleteClass = asyncHandler(async (req, res) => {
   const classData = await Class.findById(req.params.id);
 
   if (classData) {
-    await classData.remove();
+    await classData.deleteOne();
     res.json({ message: 'Class removed' });
   } else {
     res.status(404);

@@ -65,7 +65,7 @@ const deleteStudent = asyncHandler(async (req, res) => {
   const student = await Student.findById(req.params.id);
 
   if (student) {
-    await student.remove();
+    await student.deleteOne();
     res.json({ message: 'Student removed' });
   } else {
     res.status(404);
