@@ -1,5 +1,5 @@
 import asyncHandler from '../middleware/asyncHandler.js';
-import Class from '../models/classModel.js';
+import {Class} from '../models/classModel.js';
 
 // @desc    Get all classes
 // @route   GET /api/classes

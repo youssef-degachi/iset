@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-
+import mongoose from 'mongoose';
 const classSchema = new mongoose.Schema({
   nameClass: { type: String, required: true },
   liststudent: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Student' }],
@@ -12,5 +11,5 @@ const classroomSchema = new mongoose.Schema({
   typesalle: { type: String, required: true }
 });
 
-module.exports = mongoose.model('Class', classSchema);
-module.exports = mongoose.model('Classroom', classroomSchema);
+export const Class= mongoose.model('Class', classSchema);
+export const Classroom = mongoose.model('Classroom', classroomSchema);

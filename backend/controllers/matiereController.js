@@ -1,5 +1,5 @@
 import asyncHandler from '../middleware/asyncHandler.js';
-import Matiere from '../models/matiereModel.js';
+import {Matiere} from '../models/seanceModel.js';
 
 // @desc    Get all subjects (matieres)
 // @route   GET /api/matieres

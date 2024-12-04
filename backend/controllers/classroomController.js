@@ -1,5 +1,7 @@
 import asyncHandler from '../middleware/asyncHandler.js';
-import Classroom from '../models/classroomModel.js';
+// import Classroom from '../models/classroomModel.js';
+ import {Classroom} from '../models/classModel.js';
+
 
 // @desc    Get all classrooms
 // @route   GET /api/classrooms

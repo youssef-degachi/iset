@@ -1,5 +1,5 @@
 import asyncHandler from '../middleware/asyncHandler.js';
-import Seance from '../models/seanceModel.js';
+import {Seance} from '../models/seanceModel.js';
 
 // @desc    Get all seances
 // @route   GET /api/seances

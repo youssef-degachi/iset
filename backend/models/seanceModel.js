@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-
+import mongoose from 'mongoose';
 const seanceSchema = new mongoose.Schema({
   day: { type: String, required: true },
   time: { type: String, required: true },
@@ -32,7 +31,7 @@ const attendanceSchema = new mongoose.Schema({
   isAbsent: { type: Boolean, required: true }
 });
 
-module.exports = mongoose.model('Seance', seanceSchema);
-module.exports = mongoose.model('Lesson', lessonSchema);
-module.exports = mongoose.model('Matiere', matiereSchema);
-module.exports = mongoose.model('Attendance', attendanceSchema);
+export const Seance = mongoose.model('Seance', seanceSchema);
+export const Lesson = mongoose.model('Lesson', lessonSchema);
+export const Matiere = mongoose.model('Matiere', matiereSchema);
+export const Attendance = mongoose.model('Attendance', attendanceSchema);
