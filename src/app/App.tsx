@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import { Button } from '../components/ui/button.tsx'
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card.tsx"
-import FillSchedule from '../components/FillSchedule.tsx'
 import {ViewSchedule} from '../components/ViewSchedule.tsx'
 import {MarkAbsence} from '../components/MarkAbsence.tsx'
 import {ViewAbsences} from '../components/ViewAbsences.tsx'
@@ -10,6 +9,8 @@ import LanguageSelector from '../components/LanguageSelector.tsx'
 import { translations } from '../data/translations.ts'
 import React from 'react'
 import EntityManager from '../components/EntityManger.tsx'
+import { FillSchedule } from '../components/FillSchedule.tsx'
+import HomePage from '../components/HomePage.tsx'
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -19,6 +20,7 @@ export default function Home() {
 
   const renderContent = () => {
     switch(currentPage) {
+      case 'home': return <HomePage/>
       case 'fillSchedule': return <FillSchedule t={t} />
       case 'viewSchedule': return <ViewSchedule  />
       case 'markAbsence': return <MarkAbsence  />
@@ -27,7 +29,6 @@ export default function Home() {
       default: return (
         <div>
           <h2 className="text-2xl font-bold mb-4">Welcome to School Management System</h2>
-          <FillSchedule t={t} />
         </div>
       )
     }

@@ -8,7 +8,7 @@ export default function ScheduleGrid({ schedule, timeSlots, days, onCellClick })
   };
 
   return (
-    <div className="grid grid-cols-7 gap-2 mt-6">
+    <div className="grid grid-cols-7 gap-2 mt-6 w-full">
       <div className="font-bold">Time</div>
       {days.map(day => (
         <div key={day} className="font-bold">{day}</div>
